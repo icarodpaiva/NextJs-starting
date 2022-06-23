@@ -2,13 +2,11 @@ import Link from "next/link"
 import { Post } from "../../types/Post"
 
 interface BlogProps {
-  data: {
-    name: string
-    posts: Post[]
-  }
+  name: string
+  posts: Post[]
 }
 
-const Blog = ({ data: { name, posts } }: BlogProps) => {
+const Blog = ({ name, posts }: BlogProps) => {
   return (
     <div>
       <h1>It's a blog home</h1>
@@ -32,10 +30,8 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      data: {
-        name: "icaro",
-        posts
-      },
+      name: "icaro",
+      posts,
       // if there is any request after 2h, make a new request
       revalidate: 60 * 60 * 2
     }
