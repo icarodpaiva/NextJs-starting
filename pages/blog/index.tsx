@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Post } from "../../types/Post"
 
 interface BlogProps {
@@ -16,7 +17,9 @@ const Blog = ({ data: { name, posts } }: BlogProps) => {
       <h2>Static infos</h2>
       <ul>
         {posts.map(post => (
-          <li key={post.id}>{post.title}</li>
+          <li key={post.id}>
+            <Link href={`/blog/${post.id}`}>{post.title}</Link>
+          </li>
         ))}
       </ul>
     </div>
@@ -24,8 +27,8 @@ const Blog = ({ data: { name, posts } }: BlogProps) => {
 }
 
 export const getStaticProps = async () => {
-  const response = await fetch("https://jsonplaceholder.typicode.com/posts")
-  const posts: Post[] = await response.json()
+  const req = await fetch("https://jsonplaceholder.typicode.com/posts")
+  const posts: Post[] = await req.json()
 
   return {
     props: {
