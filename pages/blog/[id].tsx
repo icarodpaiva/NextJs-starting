@@ -1,4 +1,5 @@
 import { GetStaticProps } from "next"
+import { env } from "process"
 import { ParsedUrlQuery } from "querystring"
 import { Post } from "../../types/Post"
 
