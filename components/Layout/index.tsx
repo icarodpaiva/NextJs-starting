@@ -1,4 +1,6 @@
+import Head from "next/head"
 import { ReactElement } from "react"
+import { Navbar } from "../Navbar"
 import styles from "./Layout.module.css"
 
 interface LayoutProps {
@@ -7,16 +9,23 @@ interface LayoutProps {
 
 export const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className={styles.container}>
-      <header className={styles.header}>
-        <h1>Header</h1>
-      </header>
+    <>
+      <Head>
+        <title>My app :D</title>
+      </Head>
 
-      <main>{children}</main>
+      <div className={styles.container}>
+        <header className={styles.header}>
+          <h1>Header</h1>
+        </header>
+        <Navbar />
 
-      <footer className={styles.footer}>
-        <h1>Footer</h1>
-      </footer>
-    </div>
+        <main>{children}</main>
+
+        <footer className={styles.footer}>
+          <h1>Footer</h1>
+        </footer>
+      </div>
+    </>
   )
 }

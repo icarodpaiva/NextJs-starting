@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.linkItem {
+  padding: 0 15px;
+  border: 1px dotted black;
+}
+
+.linkItem a {
+  color: #000;
+  text-decoration: underline;
+}
+
+.linkItem a:hover {
+  text-decoration: none;
+}
+
+.linkItemActive {
+  border: 1px dotted #f00;
+}
+
+.linkItemActive a {
+  color: #f00;
+}
