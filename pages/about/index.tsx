@@ -8,7 +8,7 @@ const About = () => {
     <div>
       <h1>About me v2</h1>
 
-      <h2>Env variable: {process.env.NEXT_PUBLIC_NOME}</h2>
+      <h2>Env variable: {process.env.NEXT_PUBLIC_NAME}</h2>
 
       <ul>
         <li>

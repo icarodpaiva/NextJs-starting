@@ -19,7 +19,7 @@ const handlerGET: NextApiHandler = (req, res) => {
 // insert new user
 const handlerPOST: NextApiHandler = (req, res) => {
   const { name, age } = req.body
-  res.json({ id: 4, name, age })
+  res.status(201).json({ id: 4, name, age })
 }
 
 const handler: NextApiHandler = (req, res) => {
